@@ -11,8 +11,8 @@ The arithmetic involves one and two digit numbers.
 Todo
 ====
 
--Include multiplication and division
--Record highscores
--Difficulty levels
+* Include multiplication and division
+* Record highscores
+* Difficulty levels
 
 
