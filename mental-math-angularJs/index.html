@@ -1,0 +1,22 @@
+<html ng-app="mentalMathJs">
+<head>
+	
+</head>
+<body>
+	<div ng-controller="GameCtrl">
+		<h1>{{num.a}} {{operator}} {{num.b}}</h1>
+		<form ng-submit="checkAns()">
+		<input type="text" placeholder="Name" ng-model="ans"><br>
+		{{result}}
+		</form>
+	<!--<form ng-submit="addMessage()">
+	<input type="text" placeholder="Name" ng-model="message.name"><br>
+	<input type="text" placeholder="Message" ng-model="message.text"><br>
+	<button type="submit">Send</button>
+	<pre>{{messages | json}}</pre>
+	</form>-->
+	</div>
+</body>
+	<script src='lib/angular.min.js'></script>
+	<script src='controller.js'></script>
+</html>
