@@ -78,8 +78,9 @@
             this.hide();
             $('#message').hide();
             var root = MentalMath;
-            $if(localStorage.getItem("highscore") != "null")
+            $if(localStorage.getItem("highscore") != "null") {
                 $('#highscore').text(localStorage.getItem("highscore"));
+            }
             else {
                 $('#highscore').text(0);
             }
