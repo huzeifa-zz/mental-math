@@ -78,7 +78,11 @@
             this.hide();
             $('#message').hide();
             var root = MentalMath;
-            $('#highscore').text(localStorage.getItem("highscore"));
+            if(localStorage.getItem("highscore") != null)
+                $('#highscore').text(localStorage.getItem("highscore"));
+            else {
+                $('#highscore').text(0);
+            }
             $('#btn-start').click(function (e) {
                 var d0 = new Date(),
                     equation = root.Model.eqnGen();
