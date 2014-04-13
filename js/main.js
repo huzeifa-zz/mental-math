@@ -78,11 +78,12 @@
             this.hide();
             $('#message').hide();
             var root = MentalMath;
-            if(localStorage.getItem("highscore") !== "null") {
-                $('#highscore').text(localStorage.getItem("highscore"));
+            var highscore = localStorage.getItem("highscore");
+            if(!highscore) {
+                $('#highscore').text("Let's see how sharp your brain is?");
             }
             else {
-                $('#highscore').text(0);
+                $('#highscore').text(localStorage.getItem("highscore"));
             }
             $('#btn-start').click(function (e) {
                 var d0 = new Date(),
