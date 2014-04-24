@@ -77,6 +77,7 @@
         },
         
         initialize: function () {
+<<<<<<< HEAD
             var model = MentalMath.Model;
             var highscore = localStorage.getItem("highscore");
             if (!highscore) {
@@ -84,6 +85,18 @@
             }
             else {
                 this.$('highscore').innerHTML = localStorage.getItem("highscore");
+=======
+            $('#ans').focus();
+            this.hide();
+            $('#message').hide();
+            var root = MentalMath;
+            var highscore = localStorage.getItem("highscore");
+            if(!highscore) {
+                $('#highscore').text("Let's see how sharp your brain is?");
+            }
+            else {
+                $('#highscore').text(localStorage.getItem("highscore"));
+>>>>>>> 466e0163e4f3d6a04d75a195dfa764f70c587b6e
             }
             var _ = this;
             this.$('btn-start').addEventListener('click', function (e) {
