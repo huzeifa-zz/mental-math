@@ -11,7 +11,9 @@
 			margin: 0;
 			padding: 0;
 		}
+		
 		.container {
+			position: relative;
 			width: 720px;
 			margin: 0 auto;
 		}
@@ -65,7 +67,8 @@
 		#result {
 				text-align: center;
 		}
-		.input-wrapper {
+		
+		#input-wrapper {
 			text-align: center;
 			padding: 25px 0;
 		}
@@ -81,28 +84,28 @@
 </head>
 <body>
 	<header>
-			<h1 class='jumbo'>Mental Math</h1>
-			<p class='sub'>Sharpen your mental arithmetic skills...</p>
-		</header>
+		<h1 class='jumbo'>Mental Math</h1>
+		<p class='sub'>Sharpen your mental arithmetic skills...</p>
+	</header>
 	<div class="container">
 		<section class="main">
 			<div id="progress-bar">
 				<div id='timer'></div>
 			</div>
-			<h1 id="message"></h1>
-			<h1 id='eq'></h1>
-			<div class="input-wrapper">
-				<input style='display: none' type='text' placeholder='Answer' id='ans'>
+			<h1 id="message" style="display: none"></h1>
+			<div id="input-wrapper" style='display: none'>
+				<h1 id='eq'></h1>
+				<input type='text' placeholder='Answer' id='ans'>
+				<p id='result'></p>
+			</div>
+			<div style="text-align: center">
 				<button id="btn-start">Start</button>
 			</div>
-			<p id='result'></p>
 		</section>
 	</div>
 	<footer>
 		<p style='margin-left: 10px;'><strong>Highscore: </strong><span id="highscore"></span></p>
 	</footer>
-
-<script src='js/jquery-1.10.2.js'></script>
 <script src='js/main.js'></script>
 <script src='js/nanobar.min.js'></script>
 </body>

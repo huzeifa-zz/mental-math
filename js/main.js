@@ -72,25 +72,26 @@
     };
 
     MentalMath.UI = {
-
+        $: function (id) {
+            return document.getElementById(id);
+        },
+        
         initialize: function () {
-            $('#ans').focus();
-            this.hide();
-            $('#message').hide();
-            var root = MentalMath;
+            var model = MentalMath.Model;
             var highscore = localStorage.getItem("highscore");
-            if(!highscore) {
-                $('#highscore').text("Let's see how sharp your brain is?");
+            if (!highscore) {
+                this.$('highscore').innerHTML = "Let's see how sharp your brain is?";
             }
             else {
-                $('#highscore').text(localStorage.getItem("highscore"));
+                this.$('highscore').innerHTML = localStorage.getItem("highscore");
             }
-            $('#btn-start').click(function (e) {
+            var _ = this;
+            this.$('btn-start').addEventListener('click', function (e) {
                 var d0 = new Date(),
-                    equation = root.Model.eqnGen();
-                root.UI.show();
-                $(this).hide();
-                $('#eq').text(equation);
+                    equation = model.eqnGen();
+				_.$('input-wrapper').style.display = 'block';
+                _.$('btn-start').style.display = 'none';
+                _.$('eq').innerHTML = equation;
                 var options = {
                         bg: '#acf',
                         target: document.getElementById('progress-bar'),
@@ -107,44 +108,35 @@
                     }
 
                     if (countDown === 0) {
-                        $('#message').show();
-                        $('#message').text('Game Over! Your score: ' + root.Model.score);
-                        $('.input-wrapper').hide();
-                        root.UI.hide();
-                        root.Model.setHighscore();
+                        model.setHighscore();
+                        var highscore = localStorage.getItem("highscore");
+                        if (highscore) {
+                            _.$('highscore').innerHTML = localStorage.getItem("highscore");
+                        }
+                        _.$('message').style.display = 'block';
+                        _.$('message').innerHTML = 'Game Over! Your score: ' + model.score;
+                        _.$('input-wrapper').style.display = 'none';
                         return false;
                     }
                 }, 1000);
                 e.preventDefault();
             });
 
-            $(document).on('keypress', function (e) {
+            this.$('ans').addEventListener('keypress', function (e) {
                 if (e.which === 13) {
-                    var user_ans = parseInt($('#ans').val(), 10);
-                    if (MentalMath.Model.checkAns(user_ans)) {
-                        MentalMath.Model.score = MentalMath.Model.score + 1;
-                        $('#result').text('Correct! :)');
-                        $('#eq').text(MentalMath.Model.eqnGen());
+                    var user_ans = parseInt(_.$('ans').value, 10);
+                    if (model.checkAns(user_ans)) {
+                        model.score = model.score + 1;
+                        _.$('result').innerHTML = 'Correct! :)';
+                        _.$('eq').innerHTML = model.eqnGen();
                     } else {
-                        $('#result').text('Incorrect! :(');
+                        _.$('result').innerHTML = 'Incorrect! :(';
                     }
-                    $('#ans').val('');
+                    _.$('ans').value = '';
                 }
             });
         },
 
-        show: function () {
-            $('#eq').show();
-            $('#ans').show();
-            $('#result').show();
-            $('#timer').show();
-        },
-
-        hide: function () {
-            $('#eq').hide();
-            $('#ans').hide();
-            $('#result').hide();
-        }
     };
 
     MentalMath.UI.initialize();
