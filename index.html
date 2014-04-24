@@ -13,9 +13,7 @@
 		}
 		
 		.container {
-			position: relative;
-			width: 720px;
-			margin: 0 auto;
+			padding: 0 10px;
 		}
 		
 		header {
@@ -26,6 +24,7 @@
 			color: #fff;
 			padding: 20px 0;
 		}
+		
 		h1.jumbo {
 			font-size: 120px;
 			line-height: 1;
@@ -36,6 +35,7 @@
 			margin-bottom: 10px;
 			text-align: center;
 		}
+		
 		p.sub {
 			font-size: 32px;
 			color: #fff;
@@ -43,18 +43,18 @@
 			text-align: center;
 			margin: 10px 0;
 		}
+		
 		.main {
 			padding: 20px 10px;
-			
 		}
 			
 		h1#eq {
-			font-size: 60px;
+			font-size: 96px;
 			line-height: 1;
 			color: #111111;
 			letter-spacing: -1px;
 			text-align: center;
-			margin-bottom: 0;
+			margin: 20px 0;
 		}
 		h1#message {
 			font-size: 40px;
@@ -88,10 +88,10 @@
 		<p class='sub'>Sharpen your mental arithmetic skills...</p>
 	</header>
 	<div class="container">
+		<div id="progress-bar">
+			<div id='timer'></div>
+		</div>
 		<section class="main">
-			<div id="progress-bar">
-				<div id='timer'></div>
-			</div>
 			<h1 id="message" style="display: none"></h1>
 			<div id="input-wrapper" style='display: none'>
 				<h1 id='eq'></h1>
