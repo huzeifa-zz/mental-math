@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mental math</title>
-	<script src='js/jquery-1.10.2.js'></script>
 	<style>
 		body {
 			font-family: Arial, Helvetica, sans-serif;
@@ -42,8 +41,10 @@
 			text-align: center;
 			margin: 10px 0;
 		}
+		
 		.main {
 			padding: 20px 10px;
+			position: relative;
 			
 		}
 			
@@ -53,7 +54,7 @@
 			color: #111111;
 			letter-spacing: -1px;
 			text-align: center;
-			margin-bottom: 0;
+			margin-bottom: 20px;
 		}
 		h1#message {
 			font-size: 40px;
@@ -63,13 +64,14 @@
 			padding: 20px 0;
 		}
 		
-		#result {
+		p#result {
 				text-align: center;
 		}
-		.input-wrapper {
+		
+		#input-wrapper, #btn-wrapper {
 			text-align: center;
-			padding: 25px 0;
 		}
+		
 		footer {
 			width: 100%;
 			min-width: 720px;
@@ -90,13 +92,15 @@
 			<div id="progress-bar">
 				<div id='timer'></div>
 			</div>
-			<h1 id="message"></h1>
-			<h1 id='eq'></h1>
-			<div class="input-wrapper">
+			<h1 id="message" style="display: none"></h1>
+			<div id="input-wrapper" style="display: none">
+				<h1 id='eq'></h1>
 				<input type='text' placeholder='Answer' id='ans'>
+				<p id='result'></p>
+			</div>
+			<div id="btn-wrapper">
 				<button id="btn-start">Start</button>
 			</div>
-			<p id='result'></p>
 		</section>
 	</div>
 	<footer>
