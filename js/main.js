@@ -32,7 +32,7 @@
         },
 
         eqnGen: function () {
-            MentalMath.Model.initialize();
+            this.initialize();
             var opSign = ['+', '-'];
             return (this.a + " " + opSign[this.op] + " " + this.b);
         },
@@ -90,10 +90,11 @@
                 var d0 = new Date(),
                     equation = model.eqnGen();
 				_.$('input-wrapper').style.display = 'block';
+				_.$('result').style.display = "block";
                 _.$('btn-start').style.display = 'none';
                 _.$('eq').innerHTML = equation;
                 var options = {
-                        bg: '#acf',
+                        bg: '#7FDBFF',
                         target: document.getElementById('progress-bar'),
                         id: 'timer'
                     };
@@ -116,6 +117,7 @@
                         _.$('message').style.display = 'block';
                         _.$('message').innerHTML = 'Game Over! Your score: ' + model.score;
                         _.$('input-wrapper').style.display = 'none';
+                        _.$('result').style.display = 'none';
                         return false;
                     }
                 }, 1000);
@@ -125,12 +127,19 @@
             this.$('ans').addEventListener('keypress', function (e) {
                 if (e.which === 13) {
                     var user_ans = parseInt(_.$('ans').value, 10);
+                    var r = document.getElementById('right').style;
+                    var w = document.getElementById('wrong').style;
+                    var isWrong = false;
                     if (model.checkAns(user_ans)) {
-                        model.score = model.score + 1;
-                        _.$('result').innerHTML = 'Correct! :)';
+						model.score = model.score + 1;
+						w.opacity = 0.05;
+						r.opacity = 1;
+						setTimeout(function() {r.opacity = 0.05},1000);
                         _.$('eq').innerHTML = model.eqnGen();
                     } else {
-                        _.$('result').innerHTML = 'Incorrect! :(';
+                        w.opacity = 1;
+                        isWrong = true;
+                        console.log(isWrong);
                     }
                     _.$('ans').value = '';
                 }

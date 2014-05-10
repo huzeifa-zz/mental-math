@@ -49,14 +49,6 @@
 		.main {
 			padding: 20px 0;
 		}
-		
-		.howto { 
-			font-size: 20px;
-			margin: 0; 
-			color: #aaaaaa; 
-			text-align: center; 
-			line-height: 1.5
-		}
 			
 		h1#eq {
 			font-size: 96px;
@@ -122,12 +114,12 @@
 		<p class='sub'>Sharpen your mental arithmetic skills...</p>
 	</header>
 	<div class="container">
-		<p class="howto">Answer as many questions as you can in a time of 60 seconds!</p>
+		<p style="font-size: 20px; margin: 0; color: #aaaaaa; text-align: center; line-height: 1.5">Answer as many questions you can in a time of 60 seconds!</p>
 		<section class="main">
 			<h1 id="message" style="display: none"></h1>
 			<div id="input-wrapper" style='display: none'>
 				<h1 id='eq'></h1>
-				<input type='text' placeholder='Answer' id='ans' autofocus>
+				<input type='text' placeholder='Answer' id='ans'>
 			</div>
 			<div style="text-align: center">
 				<a href="#" id="btn-start">
