@@ -47,21 +47,7 @@
 		}
 		
 		.main {
-<<<<<<< HEAD
-			padding: 20px 10px;
-			position: relative;
-			
-=======
 			padding: 20px 0;
-		}
-		
-		.howto { 
-			font-size: 20px;
-			margin: 0; 
-			color: #aaaaaa; 
-			text-align: center; 
-			line-height: 1.5
->>>>>>> gh-pages
 		}
 			
 		h1#eq {
@@ -70,11 +56,7 @@
 			color: #111111;
 			letter-spacing: -1px;
 			text-align: center;
-<<<<<<< HEAD
-			margin-bottom: 20px;
-=======
 			margin: 20px 0;
->>>>>>> gh-pages
 		}
 		h1#message {
 			font-size: 40px;
@@ -84,16 +66,6 @@
 			padding: 20px 0;
 		}
 		
-<<<<<<< HEAD
-		p#result {
-				text-align: center;
-		}
-		
-		#input-wrapper, #btn-wrapper {
-			text-align: center;
-		}
-		
-=======
 		#result {
 			display: none;
 			width: 210px;
@@ -126,15 +98,13 @@
 			color: #aaaaaa;
 		}
 		
->>>>>>> gh-pages
 		footer {
 			width: 100%;
 			min-width: 720px;
 			margin: 0 auto;
 			border-top: 1px solid #ddd;
-			position: fixed;
+			position: absolute;
 			bottom: 0;
-			background: white;
 		}
 	</style>
 </head>
@@ -144,12 +114,12 @@
 		<p class='sub'>Sharpen your mental arithmetic skills...</p>
 	</header>
 	<div class="container">
-		<p class="howto">Answer as many mental arithmetic questions as you can in a time of 60 seconds!</p>
+		<p style="font-size: 20px; margin: 0; color: #aaaaaa; text-align: center; line-height: 1.5">Answer as many questions you can in a time of 60 seconds!</p>
 		<section class="main">
 			<h1 id="message" style="display: none"></h1>
 			<div id="input-wrapper" style='display: none'>
 				<h1 id='eq'></h1>
-				<input type='text' placeholder='Answer' id='ans' autofocus>
+				<input type='text' placeholder='Answer' id='ans'>
 			</div>
 			<div style="text-align: center">
 				<a href="#" id="btn-start">
@@ -157,20 +127,9 @@
 					<span style="display: inline-block">Start!</span>
 				</a>
 			</div>
-<<<<<<< HEAD
-			<h1 id="message" style="display: none"></h1>
-			<div id="input-wrapper" style="display: none">
-				<h1 id='eq'></h1>
-				<input type='text' placeholder='Answer' id='ans'>
-				<p id='result'></p>
-			</div>
-			<div id="btn-wrapper">
-				<button id="btn-start">Start</button>
-=======
 			<div id="result">
 				<div id='wrong'></div>
 				<div id='right'></div>
->>>>>>> gh-pages
 			</div>
 		</section>
 		<div id="progress-bar">
@@ -178,15 +137,8 @@
 		</div>
 	</div>
 	<footer>
-		<div style="padding: 0 28px">
-			<p><a style="float: right;" href="http://github.com/huzeifa/mental-math">View project on github</a></p>
-			<p><strong>Highscore: </strong><span id="highscore"></span></p>
-		</div>
+		<p style='margin-left: 10px;'><strong>Highscore: </strong><span id="highscore"></span></p>
 	</footer>
-<<<<<<< HEAD
-
-=======
->>>>>>> gh-pages
 <script src='js/main.js'></script>
 <script src='js/nanobar.min.js'></script>
 </body>

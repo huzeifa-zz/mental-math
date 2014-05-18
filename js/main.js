@@ -32,7 +32,7 @@
         },
 
         eqnGen: function () {
-            MentalMath.Model.initialize();
+            this.initialize();
             var opSign = ['+', '-'];
             return (this.a + " " + opSign[this.op] + " " + this.b);
         },
@@ -78,6 +78,9 @@
         
         initialize: function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> gh-pages
             var model = MentalMath.Model;
             var highscore = localStorage.getItem("highscore");
             if (!highscore) {
@@ -85,6 +88,7 @@
             }
             else {
                 this.$('highscore').innerHTML = localStorage.getItem("highscore");
+<<<<<<< HEAD
 =======
             $('#ans').focus();
             this.hide();
@@ -97,16 +101,22 @@
             else {
                 $('#highscore').text(localStorage.getItem("highscore"));
 >>>>>>> 466e0163e4f3d6a04d75a195dfa764f70c587b6e
+=======
+>>>>>>> gh-pages
             }
             var _ = this;
             this.$('btn-start').addEventListener('click', function (e) {
                 var d0 = new Date(),
                     equation = model.eqnGen();
 				_.$('input-wrapper').style.display = 'block';
+<<<<<<< HEAD
+=======
+				_.$('result').style.display = "block";
+>>>>>>> gh-pages
                 _.$('btn-start').style.display = 'none';
                 _.$('eq').innerHTML = equation;
                 var options = {
-                        bg: '#acf',
+                        bg: '#7FDBFF',
                         target: document.getElementById('progress-bar'),
                         id: 'timer'
                     };
@@ -129,6 +139,10 @@
                         _.$('message').style.display = 'block';
                         _.$('message').innerHTML = 'Game Over! Your score: ' + model.score;
                         _.$('input-wrapper').style.display = 'none';
+<<<<<<< HEAD
+=======
+                        _.$('result').style.display = 'none';
+>>>>>>> gh-pages
                         return false;
                     }
                 }, 1000);
@@ -138,12 +152,28 @@
             this.$('ans').addEventListener('keypress', function (e) {
                 if (e.which === 13) {
                     var user_ans = parseInt(_.$('ans').value, 10);
+<<<<<<< HEAD
                     if (model.checkAns(user_ans)) {
                         model.score = model.score + 1;
                         _.$('result').innerHTML = 'Correct! :)';
                         _.$('eq').innerHTML = model.eqnGen();
                     } else {
                         _.$('result').innerHTML = 'Incorrect! :(';
+=======
+                    var r = document.getElementById('right').style;
+                    var w = document.getElementById('wrong').style;
+                    var isWrong = false;
+                    if (model.checkAns(user_ans)) {
+						model.score = model.score + 1;
+						w.opacity = 0.05;
+						r.opacity = 1;
+						setTimeout(function() {r.opacity = 0.05},1000);
+                        _.$('eq').innerHTML = model.eqnGen();
+                    } else {
+                        w.opacity = 1;
+                        isWrong = true;
+                        console.log(isWrong);
+>>>>>>> gh-pages
                     }
                     _.$('ans').value = '';
                 }
