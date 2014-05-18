@@ -111,8 +111,9 @@
 			min-width: 720px;
 			margin: 0 auto;
 			border-top: 1px solid #ddd;
-			position: absolute;
+			position: fixed;
 			bottom: 0;
+			background: white;
 		}
 	</style>
 </head>
@@ -145,7 +146,10 @@
 		</div>
 	</div>
 	<footer>
-		<p style='margin-left: 10px;'><strong>Highscore: </strong><span id="highscore"></span></p>
+		<div style="padding: 0 28px">
+			<p><a style="float: right;" href="http://github.com/huzeifa/mental-math">View project on github</a></p>
+			<p><strong>Highscore: </strong><span id="highscore"></span></p>
+		</div>
 	</footer>
 <script src='js/main.js'></script>
 <script src='js/nanobar.min.js'></script>
